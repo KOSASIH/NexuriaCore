@@ -1,0 +1,31 @@
+# Prometheus rules file
+
+groups:
+  - name: nexuria-rules
+    rules:
+      - alert: InstanceDown
+        expr: up == 0
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Instance {{ $labels.instance }} is down"
+          description: "Instance {{ $labels.instance }} has been down for 5 minutes"
+
+      - alert: HighCPUUsage
+        expr: 100 - (100 - avg by (instance) (irate(node_cpu_seconds_total{job='nexuria-api-gateway'}[1m]))) > 80
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High CPU usage on instance {{ $labels.instance }}"
+          description: "CPU usage on instance {{ $labels.instance }} is above 80% for 5 minutes"
+
+      - alert: HighMemoryUsage
+        expr: 100 - (100 - avg by (instance) (node_memory_MemTotal_bytes{job='nexuria-api-gateway'} - node_memory_MemFree_bytes{job='nexuria-api-gateway'}) / node_memory_MemTotal_bytes{job='nexuria-api-gateway'} * 100) > 80
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High memory usage on instance {{ $labels.instance }}"
+          description: "Memory usage on instance {{ $labels.instance }} is above 80% for 5 minutes"
