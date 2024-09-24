@@ -1,0 +1,28 @@
+{
+  "regulatoryFrameworks": [
+    {
+      "name": "AML/KYC",
+      "rules": [
+        "Verify customer identity",
+        "Monitor transactions for suspicious activity"
+      ]
+    },
+    {
+      "name": "GDPR",
+      "rules": [
+        "Protect user data",
+        "Obtain consent for data processing"
+      ]
+    }
+  ],
+  "jurisdictions": [
+    {
+      "name": "USA",
+      "regulatoryFrameworks": ["AML/KYC"]
+    },
+    {
+      "name": "EU",
+      "regulatoryFrameworks": ["GDPR"]
+    }
+  ]
+}
