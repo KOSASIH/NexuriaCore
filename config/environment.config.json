@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "Nexuria Environment Configuration",
+  "description": "Environment-specific configuration file for NexuriaCore",
+  "type": "object",
+  "properties": {
+    "environment": {
+      "type": "string",
+      "enum": ["development", "staging", "production"],
+      "default": "development",
+      "description": "Environment name"
+    },
+    "logging": {
+      "type": "object",
+      "properties": {
+        "level": {
+          "type": "string",
+          "enum": ["debug", "info", "warn", "error", "fatal"],
+          "default": "info",
+          "description": "Logging level"
+        },
+        "format": {
+          "type": "string",
+          "enum": ["json", "text"],
+          "default": "json",
+          "description": "Logging format"
+        }
+      }
+    }
+  }
+}
