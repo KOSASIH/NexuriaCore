@@ -1,2 +1,21 @@
-# Google App Engine generated folder
-appengine-generated/
+# Binaries
+bin/
+obj/
+
+# NuGet packages
+*.nupkg
+
+# Visual Studio files
+*.vs/
+*.csproj.user
+
+# Test results
+TestResults/
+
+# Azure deployment files
+NexuriaARMTemplate.json
+NexuriaARMParameters.json
+
+# Other files
+app.config
+packages.config
