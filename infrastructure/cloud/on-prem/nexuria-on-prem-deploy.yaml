@@ -1,0 +1,116 @@
+# Nexuria On-Premises Deployment YAML File
+
+# Define the on-premises environment
+environment:
+  name: nexuria-on-prem
+  description: Nexuria on-premises deployment
+
+# Define the on-premises network
+network:
+  name: nexuria-network
+  cidr_block: 10.0.0.0/16
+  subnets:
+    - name: nexuria-subnet
+      cidr_block: 10.0.1.0/24
+    - name: nexuria-subnet-2
+      cidr_block: 10.0.2.0/24
+
+# Define the on-premises firewall rules
+firewall_rules:
+  - name: nexuria-firewall-rule
+    source_ranges:
+      - 0.0.0.0/0
+    allowed:
+      - protocol: tcp
+        ports:
+          - 22
+          - 80
+          - 443
+
+# Define the on-premises servers
+servers:
+  - name: nexuria-api-gateway
+    type: Ubuntu Server 20.04 LTS
+    cpu: 4
+    memory: 16
+    disk: 30
+    network_interfaces:
+      - name: nexuria-nic
+        subnet: ${network.subnets[0].name}
+    os:
+      username: nexuria
+      password: ${ADMIN_PASSWORD}
+    services:
+      - name: docker
+        enabled: true
+        started: true
+  - name: nexuria-qrbcs
+    type: Ubuntu Server 20.04 LTS
+    cpu: 4
+    memory: 16
+    disk: 30
+    network_interfaces:
+      - name: nexuria-nic-2
+        subnet: ${network.subnets[1].name}
+    os:
+      username: nexuria
+      password: ${ADMIN_PASSWORD}
+    services:
+      - name: docker
+        enabled: true
+        started: true
+  - name: nexuria-neuronetworks
+    type: Ubuntu Server 20.04 LTS
+    cpu: 4
+    memory: 16
+    disk: 30
+    network_interfaces:
+      - name: nexuria-nic-3
+        subnet: ${network.subnets[0].name}
+    os:
+      username: nexuria
+      password: ${ADMIN_PASSWORD}
+    services:
+      - name: docker
+        enabled: true
+        started: true
+  - name: nexuria-gaps
+    type: Ubuntu Server 20.04 LTS
+    cpu: 4
+    memory: 16
+    disk: 30
+    network_interfaces:
+      - name: nexuria-nic-4
+        subnet: ${network.subnets[1].name}
+    os:
+      username: nexuria
+      password: ${ADMIN_PASSWORD}
+    services:
+      - name: docker
+        enabled: true
+        started: true
+
+# Define the on-premises storage
+storage:
+  name: nexuria-storage
+  type: Ceph
+  capacity: 1000
+
+# Define the on-premises database
+database:
+  name: nexuria-database
+  type: PostgreSQL
+  version: 12
+  username: nexuria
+  password: ${ADMIN_PASSWORD}
+  storage: ${storage.name}
+
+# Define the on-premises monitoring
+monitoring:
+  name: nexuria-monitoring
+  type: Prometheus
+  targets:
+    - ${servers[0].name}
+    - ${servers[1].name}
+    - ${servers[2].name}
+    - ${servers[3].name}
