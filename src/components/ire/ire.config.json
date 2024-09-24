@@ -1,0 +1,30 @@
+{
+  "rewardTypes": [
+    {
+      "name": "Pi Coin rewards",
+      "description": "Rewards in Pi Coin"
+    },
+    {
+      "name": "Discounts",
+      "description": "Discounts on Pi Coin transactions"
+    }
+  ],
+  "incentivePrograms": [
+    {
+      "name": "Referral program",
+      "rewardType": "Pi Coin rewards",
+      "rules": [
+        "Refer a friend to Pi Coin",
+        "Get 10 Pi Coin as a reward"
+      ]
+    },
+    {
+      "name": "Loyalty program",
+      "rewardType": "Discounts",
+      "rules": [
+        "Make 10 transactions on Pi Coin",
+        "Get 10% discount on next transaction"
+      ]
+    }
+  ]
+}
