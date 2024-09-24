@@ -1,5 +1,5 @@
 # NexuriaCore
-The central repository for Project Nexuria, housing the overall project architecture and integration of its components.
+The central repository for Project [Nexuria](docs), housing the overall project architecture and integration of its components.
 
 Nexuria Core
 ================
