@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "Nexuria Configuration",
+  "description": "Configuration file for NexuriaCore",
+  "type": "object",
+  "properties": {
+    "api": {
+      "type": "object",
+      "properties": {
+        "port": {
+          "type": "integer",
+          "default": 8080,
+          "description": "API port number"
+        },
+        "host": {
+          "type": "string",
+          "default": "localhost",
+          "description": "API host"
+        },
+        "cors": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "default": true,
+              "description": "Enable CORS"
+            },
+            "allowedOrigins": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "default": ["*"],
+              "description": "Allowed CORS origins"
+            }
+          }
+        }
+      }
+    },
+    "database": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["mysql", "postgres", "mongodb"],
+          "default": "mysql",
+          "description": "Database type"
+        },
+        "host": {
+          "type": "string",
+          "default": "localhost",
+          "description": "Database host"
+        },
+        "port": {
+          "type": "integer",
+          "default": 3306,
+          "description": "Database port"
+        },
+        "username": {
+          "type": "string",
+          "default": "root",
+          "description": "Database username"
+        },
+        "password": {
+          "type": "string",
+          "default": "",
+          "description": "Database password"
+        },
+        "database": {
+          "type": "string",
+          "default": "nexuria",
+          "description": "Database name"
+        }
+      }
+    },
+    "security": {
+      "type": "object",
+      "properties": {
+        "jwt": {
+          "type": "object",
+          "properties": {
+            "secret": {
+              "type": "string",
+              "default": "secret",
+              "description": "JWT secret"
+            },
+            "expiresIn": {
+              "type": "integer",
+              "default": 3600,
+              "description": "JWT expiration time in seconds"
+            }
+          }
+        }
+      }
+    }
+  }
+}
