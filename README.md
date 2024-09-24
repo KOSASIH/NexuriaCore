@@ -40,11 +40,11 @@ Contributions are welcome! If you'd like to contribute to Nexuria Core, please f
 
 ## License
 
-Nexuria Core is licensed under the MIT License. See LICENSE for details.
+Nexuria Core is licensed under the Apache 2.0 License. See LICENSE for details.
 
 ## Author
 
-Nexuria Core is maintained by KOSASIH.
+Nexuria Core is maintained by [KOSASIH](https://www.linkedin.com/in/kosasih-81b46b5a).
 
 # Acknowledgments
 
