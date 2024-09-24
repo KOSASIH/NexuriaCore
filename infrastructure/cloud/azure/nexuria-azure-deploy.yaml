@@ -1,0 +1,226 @@
+# Nexuria Azure Deployment YAML File
+
+# Define the Azure subscription
+subscription_id: ${AZURE_SUBSCRIPTION_ID}
+
+# Define the Azure resource group
+resource_group: nexuria-resource-group
+
+# Define the Azure location
+location: West US
+
+# Define the Azure credentials
+credentials:
+  type: service_principal
+  client_id: ${AZURE_CLIENT_ID}
+  client_secret: ${AZURE_CLIENT_SECRET}
+  tenant_id: ${AZURE_TENANT_ID}
+
+# Define the Azure virtual network
+virtual_network:
+  name: nexuria-virtual-network
+  address_prefixes:
+    - 10.0.0.0/16
+
+# Define the Azure subnets
+subnets:
+  - name: nexuria-subnet
+    address_prefix: 10.0.1.0/24
+  - name: nexuria-subnet-2
+    address_prefix: 10.0.2.0/24
+
+# Define the Azure network security groups
+network_security_groups:
+  - name: nexuria-nsg
+    security_rules:
+      - name: allow-http
+        protocol: Tcp
+        source_port_range: '*'
+        destination_port_range: '80'
+        source_address_prefix: '*'
+        destination_address_prefix: '*'
+        access: Allow
+        priority: 100
+      - name: allow-https
+        protocol: Tcp
+        source_port_range: '*'
+        destination_port_range: '443'
+        source_address_prefix: '*'
+        destination_address_prefix: '*'
+        access: Allow
+        priority: 101
+
+# Define the Azure virtual machines
+virtual_machines:
+  - name: nexuria-api-gateway
+    type: Standard_DS2_v2
+    os_disk:
+      caching: ReadWrite
+      create_option: FromImage
+      disk_size_gb: 30
+    image_reference:
+      publisher: Canonical
+      offer: UbuntuServer
+      sku: 18.04-LTS
+      version: latest
+    network_interfaces:
+      - name: nexuria-nic
+        primary: true
+        ip_configurations:
+          - name: ipconfig1
+            subnet:
+              id: ${subnets[0].id}
+            private_ip_address_allocation: Dynamic
+    storage_profile:
+      image_reference:
+        publisher: Canonical
+        offer: UbuntuServer
+        sku: 18.04-LTS
+        version: latest
+      os_disk:
+        create_option: FromImage
+        disk_size_gb: 30
+    os_profile:
+      admin_username: nexuria
+      admin_password: ${ADMIN_PASSWORD}
+      computer_name: nexuria-api-gateway
+    diagnostics_profile:
+      boot_diagnostics:
+        enabled: true
+        storage_uri: ${storage_account.blob_endpoint}
+
+  - name: nexuria-qrbcs
+    type: Standard_DS2_v2
+    os_disk:
+      caching: ReadWrite
+      create_option: FromImage
+      disk_size_gb: 30
+    image_reference:
+      publisher: Canonical
+      offer: UbuntuServer
+      sku: 18.04-LTS
+      version: latest
+    network_interfaces:
+      - name: nexuria-nic-2
+        primary: true
+        ip_configurations:
+          - name: ipconfig2
+            subnet:
+              id: ${subnets[1].id}
+            private_ip_address_allocation: Dynamic
+    storage_profile:
+      image_reference:
+        publisher: Canonical
+        offer: UbuntuServer
+        sku: 18.04-LTS
+        version: latest
+      os_disk:
+        create_option: FromImage
+        disk_size_gb: 30
+    os_profile:
+      admin_username: nexuria
+      admin_password: ${ADMIN_PASSWORD}
+      computer_name: nexuria-qrbcs
+    diagnostics_profile:
+      boot_diagnostics:
+        enabled: true
+        storage_uri: ${storage_account.blob_endpoint}
+
+  - name: nexuria-neuronetworks
+    type: Standard_DS2_v2
+    os_disk:
+      caching: ReadWrite
+      create_option: FromImage
+      disk_size_gb: 30
+    image_reference:
+      publisher: Canonical
+      offer: UbuntuServer
+      sku: 18.04-LTS
+      version: latest
+    network_interfaces:
+      - name: nexuria-nic-3
+        primary: true
+        ip_configurations:
+          - name: ipconfig3
+            subnet:
+              id: ${subnets[0].id}
+            private_ip_address_allocation: Dynamic
+    storage_profile:
+      image_reference:
+        publisher: Canonical
+        offer: UbuntuServer
+        sku: 18.04-LTS
+        version: latest
+      os_disk:
+        create_option: FromImage
+        disk_size_gb: 30
+    os_profile:
+      admin_username: nexuria
+      admin_password: ${ADMIN_PASSWORD}
+      computer_name: nexuria-ne uronetworks
+    diagnostics_profile:
+      boot_diagnostics:
+        enabled: true
+        storage_uri: ${storage_account.blob_endpoint}
+
+  - name: nexuria-gaps
+    type: Standard_DS2_v2
+    os_disk:
+      caching: ReadWrite
+      create_option: FromImage
+      disk_size_gb: 30
+    image_reference:
+      publisher: Canonical
+      offer: UbuntuServer
+      sku: 18.04-LTS
+      version: latest
+    network_interfaces:
+      - name: nexuria-nic-4
+        primary: true
+        ip_configurations:
+          - name: ipconfig4
+            subnet:
+              id: ${subnets[1].id}
+            private_ip_address_allocation: Dynamic
+    storage_profile:
+      image_reference:
+        publisher: Canonical
+        offer: UbuntuServer
+        sku: 18.04-LTS
+        version: latest
+      os_disk:
+        create_option: FromImage
+        disk_size_gb: 30
+    os_profile:
+      admin_username: nexuria
+      admin_password: ${ADMIN_PASSWORD}
+      computer_name: nexuria-gaps
+    diagnostics_profile:
+      boot_diagnostics:
+        enabled: true
+        storage_uri: ${storage_account.blob_endpoint}
+
+# Define the Azure storage account
+storage_account:
+  name: nexuria-storage-account
+  type: Standard_LRS
+  location: West US
+  resource_group: ${resource_group}
+
+# Define the Azure database
+database:
+  name: nexuria-database
+  type: PostgreSQL
+  location: West US
+  resource_group: ${resource_group}
+  server_name: nexuria-database-server
+  administrator_login: nexuria
+  administrator_login_password: ${ADMIN_PASSWORD}
+  storage_mb: 5120
+
+# Define the Azure monitoring
+monitoring:
+  name: nexuria-monitoring
+  type: AzureMonitor
+  location: West US
+  resource_group: ${resource_group}
