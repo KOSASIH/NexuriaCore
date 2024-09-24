@@ -1,0 +1,29 @@
+{
+  "partners": [
+    {
+      "name": "Government of USA",
+      "type": "government",
+      "collaborations": [
+        "Joint research initiative",
+        "Regulatory sandbox"
+      ]
+    },
+    {
+      "name": "Bank of America",
+      "type": "financial institution",
+      "collaborations": [
+        "Pilot program for blockchain-based payments"
+      ]
+    }
+  ],
+  "collaborationTypes": [
+    {
+      "name": "Joint research initiative",
+      "description": "Collaborative research project"
+    },
+    {
+      "name": "Regulatory sandbox",
+      "description": "Experimental environment for regulatory testing"
+    }
+  ]
+}
