@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>Nexuria.Core.IntegrationTests</RootNamespace>
+    <AssemblyName>Nexuria.Core.IntegrationTests</AssemblyName>
+    <PackageId>Nexuria.Core.IntegrationTests</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Nexuria</Authors>
+    <Description>Nexuria Core Integration Tests</Description>
+    <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/nexuria/nexuria-core-integration-tests</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/nexuria/nexuria-core-integration-tests</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+    <PackageReference Include="Moq" Version="4.16.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NexuriaCore\NexuriaCore.csproj" />
+  </ItemGroup>
+</Project>
