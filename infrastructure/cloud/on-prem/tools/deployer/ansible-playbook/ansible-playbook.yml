@@ -1,0 +1,110 @@
+---
+- name: Deploy Nexuria On-Premises Infrastructure
+  hosts: localhost
+  become: yes
+
+  vars:
+    environment: nexuria-on-prem
+    network: nexuria-network
+    subnet: nexuria-subnet
+    firewall_rule: nexuria-firewall-rule
+    servers:
+      - name: nexuria-api-gateway
+        type: Ubuntu Server 20.04 LTS
+        cpu: 4
+        memory: 16
+        disk: 30
+      - name: nexuria-qrbcs
+        type: Ubuntu Server 20.04 LTS
+        cpu: 4
+        memory: 16
+        disk: 30
+      - name: nexuria-neuronetworks
+        type: Ubuntu Server 20.04 LTS
+        cpu: 4
+        memory: 16
+        disk: 30
+      - name: nexuria-gaps
+        type: Ubuntu Server 20.04 LTS
+        cpu: 4
+        memory: 16
+        disk: 30
+    storage: nexuria-storage
+    database: nexuria-database
+    monitoring: nexuria-monitoring
+
+  tasks:
+  - name: Create network
+    os_network:
+      name: "{{ network }}"
+      cidr: "10.0.0.0/16"
+      state: present
+
+  - name: Create subnets
+    os_subnet:
+      name: "{{ subnet }}"
+      network_name: "{{ network }}"
+      cidr: "10.0.1.0/24"
+      state: present
+
+  - name: Create firewall rule
+    os_firewall_rule:
+      name: "{{ firewall_rule }}"
+      source_ranges:
+        - "0.0.0.0/0"
+      allowed:
+        - protocol: tcp
+          ports:
+            - 22
+            - 80
+            - 443
+      state: present
+
+  - name: Create servers
+    os_server:
+      name: "{{ item.name }}"
+      image: "{{ item.type }}"
+      flavor: "{{ item.cpu }}{{ item.memory }}{{ item.disk }}"
+      network: "{{ network }}"
+      subnet: "{{ subnet }}"
+      state: present
+    loop: "{{ servers }}"
+
+  - name: Configure servers
+    os_server_config:
+      name: "{{ item.name }}"
+      username: "nexuria"
+      password: "{{ ADMIN_PASSWORD }}"
+      services:
+        - name: docker
+          enabled: true
+          started: true
+    loop: "{{ servers }}"
+
+  - name: Create storage
+    os_storage:
+      name: "{{ storage }}"
+      type: Ceph
+      capacity: 1000
+      state: present
+
+  - name: Create database
+    os_database:
+      name: "{{ database }}"
+      type: PostgreSQL
+      version: 12
+      username: "nexuria"
+      password: "{{ ADMIN_PASSWORD }}"
+      storage: "{{ storage }}"
+      state: present
+
+  - name: Create monitoring
+    os_monitoring:
+      name: "{{ monitoring }}"
+      type: Prometheus
+      targets:
+        - "{{ servers[0].name }}"
+        - "{{ servers[1].name }}"
+        - "{{ servers[2].name }}"
+        - "{{ servers[3].name }}"
+      state: present
