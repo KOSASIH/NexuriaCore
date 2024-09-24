@@ -1,0 +1,239 @@
+# Nexuria GCP Deployment YAML File
+
+# Define the GCP project
+project: nexuria-project
+
+# Define the GCP region
+region: us-central1
+
+# Define the GCP zone
+zone: us-central1-a
+
+# Define the GCP credentials
+credentials:
+  type: service_account
+  project_id: ${project}
+  private_key_id: ${PRIVATE_KEY_ID}
+  private_key: ${PRIVATE_KEY}
+  client_email: ${CLIENT_EMAIL}
+  client_id: ${CLIENT_ID}
+  auth_uri: https://accounts.google.com/o/oauth2/auth
+  token_uri: https://oauth2.googleapis.com/token
+
+# Define the GCP network
+network:
+  name: nexuria-network
+  auto_create_subnetworks: true
+
+# Define the GCP subnetwork
+subnetwork:
+  name: nexuria-subnetwork
+  ip_cidr_range: 10.0.0.0/16
+  region: ${region}
+
+# Define the GCP firewall rules
+firewall_rules:
+  - name: nexuria-firewall-rule
+    network: ${network.name}
+    source_ranges:
+      - 0.0.0.0/0
+    allowed:
+      - IPProtocol: TCP
+        ports:
+          - 22
+          - 80
+          - 443
+
+# Define the GCP instances
+instances:
+  - name: nexuria-api-gateway
+    machine_type: n1-standard-4
+    zone: ${zone}
+    network_interfaces:
+      - network: ${network.name}
+        subnetwork: ${subnetwork.name}
+    disks:
+      - source_image: projects/debian-cloud/global/images/debian-9-stretch-v20191210
+        disk_size_gb: 30
+        boot: true
+    metadata:
+      startup-script: |
+        #! /bin/bash
+        apt-get update
+        apt-get install -y docker.io
+        systemctl start docker
+        docker run -d -p 80:80 -p 443:443 nexuria-api-gateway
+  - name: nexuria-qrbcs
+    machine_type: n1-standard-4
+    zone: ${zone}
+    network_interfaces:
+      - network: ${network.name}
+        subnetwork: ${subnetwork.name}
+    disks:
+      - source_image: projects/debian-cloud/global/images/debian-9-stretch-v20191210
+        disk_size_gb: 30
+        boot: true
+    metadata:
+      startup-script: |
+        #! /bin/bash
+        apt-get update
+        apt-get install -y docker.io
+        systemctl start docker
+        docker run -d -p 8080:8080 nexuria-qrbcs
+  - name: nexuria-neuronetworks
+    machine_type: n1-standard-4
+    zone: ${zone}
+    network_interfaces:
+      - network: ${network.name}
+        subnetwork: ${subnetwork.name}
+    disks:
+      - source_image: projects/debian-cloud/global/images/debian-9-stretch-v20191210
+        disk_size_gb: 30
+        boot: true
+    metadata:
+      startup-script: |
+        #! /bin/bash
+        apt-get update
+        apt-get install -y docker.io
+        systemctl start docker
+        docker run -d -p 8081:8081 nexuria-neuronetworks
+  - name: nexuria-gaps
+    machine_type: n1-standard-4
+    zone: ${zone}
+    network_interfaces:
+      - network: ${network.name}
+        subnetwork: ${subnetwork.name}
+    disks:
+      - source_image: projects/debian-cloud/global/images/debian-9-stretch-v20191210
+        disk_size_gb: 30
+        boot: true
+    metadata:
+      startup-script: |
+        #! /bin/bash
+        apt-get update
+        apt-get install -y docker.io
+        systemctl start docker
+        docker run -d -p 8082:8082 nexuria-gaps
+
+# Define the GCP Cloud SQL instance
+cloud_sql_instance:
+  name: nexuria-cloud-sql
+  region: ${region}
+  database_version: POSTGRES_11
+  tier: db-n1-standard-1
+  storage_size_gb: 30
+
+# Define the GCP Cloud Storage bucket
+cloud_storage_bucket:
+  name: nexuria-cloud-storage
+
+# Define the GCP Cloud Logging
+cloud_logging:
+  name: nexuria-cloud-logging
+
+# Define the GCP Cloud Monitoring
+cloud_monitoring:
+  name: nexuria-cloud-monitoring
+
+# Define the GCP Deployment Manager
+deployment_manager:
+  name: nexuria-deployment-manager
+  template: |
+    resources:
+      - name: nexuria-network
+        type: compute.v1.network
+        properties:
+          autoCreateSubnetworks: true
+      - name: nexuria-subnetwork
+        type: compute.v1.subnetwork
+        properties:
+          ipCidrRange: 10.0.0.0/16
+          region: ${region}
+      - name: nexuria-firewall-rule
+        type: compute.v1.firewall
+        properties:
+          network: ${network.name}
+          sourceRanges:
+            - 0.0.0.0/0
+          allowed:
+            - IPProtocol: TCP
+              ports:
+                - 22
+                - 80
+                - 443
+      - name: nexuria-api-gateway
+        type: compute.v1.instance
+        properties:
+          machineType: n1-standard-4
+          zone: ${zone}
+          networkInterfaces:
+            - network: ${network.name}
+              subnetwork: ${subnetwork.name}
+          disks:
+            - sourceImage: projects/debian-cloud/global/images/debian-9-stretch-v20191210
+              diskSizeGb: 30
+              boot: true
+          metadata:
+            startupScript: |
+              #! /bin/bash
+              apt-get update
+              apt-get install -y docker.io
+              systemctl start docker
+              docker run -d -p 80:80 -p 443:443 nexuria-api-gateway
+      - name: nexuria-qrbcs
+        type: compute.v1.instance
+        properties:
+          machineType: n1-standard-4
+          zone: ${zone}
+          networkInterfaces:
+            - network: ${network.name}
+              subnetwork: ${subnetwork.name}
+          disks:
+            - sourceImage: projects/debian-cloud/global/images/debian-9-stretch-v20191210
+              diskSizeGb: 30
+              boot: true
+          metadata:
+            startupScript: |
+              #! /bin/bash
+              apt-get update
+              apt-get install -y docker.io
+              systemctl start docker
+              docker run -d -p 8080:8080 nexuria-qrbcs
+      - name: nexuria-neuronetworks
+        type: compute.v1.instance
+        properties:
+          machineType: n1-standard-4
+          zone: ${zone}
+          networkInterfaces:
+            - network: ${network.name}
+              subnetwork: ${subnetwork.name}
+          disks:
+            - sourceImage: projects/debian-cloud/global/images/debian-9-stretch-v20191210
+              diskSizeGb: 30
+              boot: true
+          metadata:
+            startupScript: |
+              #! /bin/bash
+              apt-get update
+              apt-get install -y docker.io
+              systemctl start docker
+              docker run -d -p 8081:8081 nexuria-neuronetworks
+      - name: nexuria-gaps
+        type: compute.v1.instance
+        properties:
+          machineType: n1-standard-4
+          zone: ${zone}
+          networkInterfaces:
+            - network: ${network.name}
+              subnetwork: ${subnetwork.name}
+          disks:
+            - sourceImage: projects/debian-cloud/global/images/debian-9-stretch-v20191210
+              diskSizeGb: 30
+              boot: true
+          metadata:
+            startupScript: |
+              #! /bin/bash
+              apt-get update
+              apt-get install -y docker.io
+              systemctl start docker
+              docker run -d -p 8082:8082 nexuria-gaps
