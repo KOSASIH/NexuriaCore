@@ -1,0 +1,64 @@
+# Prometheus configuration file
+
+# Global configuration
+global:
+  scrape_interval: 10s
+  evaluation_interval: 10s
+  external_labels:
+    environment: nexuria
+
+# Alerting configuration
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets: ["localhost:9093"]
+
+# Rule files
+rule_files:
+  - "nexuria-rules/*.yml"
+
+# Scrape configuration
+scrape_configs:
+  - job_name: "nexuria-api-gateway"
+    scrape_interval: 10s
+    metrics_path: /metrics
+    static_configs:
+      - targets: ["nexuria-api-gateway:8080"]
+
+  - job_name: "nexuria-qrbcs"
+    scrape_interval: 10s
+    metrics_path: /metrics
+    static_configs:
+      - targets: ["nexuria-qrbcs:8081"]
+
+  - job_name: "nexuria-neuronetworks"
+    scrape_interval: 10s
+    metrics_path: /metrics
+    static_configs:
+      - targets: ["nexuria-neuronetworks:8082"]
+
+  - job_name: "nexuria-gaps"
+    scrape_interval: 10s
+    metrics_path: /metrics
+    static_configs:
+      - targets: ["nexuria-gaps:8083"]
+
+  - job_name: "node"
+    scrape_interval: 10s
+    metrics_path: /metrics
+    static_configs:
+      - targets: ["localhost:9100"]
+
+# Service discovery configuration
+service_discovery:
+  file_sd_configs:
+    - files:
+        - nexuria-sd/*.yml
+      refresh_interval: 10s
+
+# Remote write configuration
+remote_write:
+  - url: http://localhost:9090/api/v1/write
+    queue_config:
+      max_samples_per_send: 1000
+      batch_send_deadline: 10s
