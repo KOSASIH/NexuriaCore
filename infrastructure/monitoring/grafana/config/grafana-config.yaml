@@ -1,0 +1,18 @@
+# Grafana configuration file
+
+# Define the data sources
+datasources:
+  - name: Nexuria Prometheus
+    type: prometheus
+    url: http://localhost:9090
+    access: proxy
+
+# Define the dashboards
+dashboards:
+  - name: Nexuria Dashboard
+    file: nexuria-grafana-dashboard.json
+
+# Define the server
+server:
+  http_port: 3000
+  enable_gzip: true
