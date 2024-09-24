@@ -1,0 +1,104 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  buildConfiguration: 'Release'
+  solution: '**/*.sln'
+  project: '**/*.csproj'
+  testProject: '**/*Tests.csproj'
+  packageId: 'Nexuria'
+  packageVersion: '1.0.0'
+  packageOutputPath: '$(System.DefaultWorkingDirectory)/packages'
+
+stages:
+- build
+- test
+- package
+- deploy
+
+build:
+  stage: build
+  displayName: 'Build'
+  jobs:
+  - job: build
+    displayName: 'Build'
+    steps:
+    - task: DotNetCoreCLI@2
+      displayName: 'Restore NuGet Packages'
+      inputs:
+        command: 'restore'
+        projects: '$(solution)'
+    - task: DotNetCoreCLI@2
+      displayName: 'Build'
+      inputs:
+        command: 'build'
+        projects: '$(solution)'
+        arguments: '--configuration $(buildConfiguration)'
+
+test:
+  stage: test
+  displayName: 'Test'
+  dependsOn: build
+  jobs:
+  - job: test
+    displayName: 'Test'
+    steps:
+    - task: DotNetCoreCLI@2
+      displayName: 'Restore NuGet Packages'
+      inputs:
+        command: 'restore'
+        projects: '$(testProject)'
+    - task: DotNetCoreCLI@2
+      displayName: 'Run Unit Tests'
+      inputs:
+        command: 'test'
+        projects: '$(testProject)'
+        arguments: '--configuration $(buildConfiguration)'
+    - task: DotNetCoreCLI@2
+      displayName: 'Run Integration Tests'
+      inputs:
+        command: 'test'
+        projects: '$(testProject)'
+        arguments: '--configuration $(buildConfiguration)'
+
+package:
+  stage: package
+  displayName: 'Package'
+  dependsOn: test
+  jobs:
+  - job: package
+    displayName: 'Package'
+    steps:
+    - task: DotNetCoreCLI@2
+      displayName: 'Pack'
+      inputs:
+        command: 'pack'
+        projects: '$(project)'
+        nobuild: true
+        includeSymbols: true
+        includeSource: true
+        outputDirectory: '$(packageOutputPath)'
+
+deploy:
+  stage: deploy
+  displayName: 'Deploy'
+  dependsOn: package
+  jobs:
+  - job: deploy
+    displayName: 'Deploy'
+    steps:
+    - task: AzureResourceManagerTemplateDeployment@3
+      displayName: 'Deploy to Azure'
+      inputs:
+        deploymentScope: 'ResourceGroup'
+        azureResourceManagerConnection: 'NexuriaAzureConnection'
+        subscriptionName: 'NexuriaSubscription'
+        resourceGroupName: 'NexuriaResourceGroup'
+        location: 'West US'
+        templateLocation: 'Linked artifact'
+        csmFile: '$(System.DefaultWorkingDirectory)/NexuriaARMTemplate.json'
+        csmParametersFile: '$(System.DefaultWorkingDirectory)/NexuriaARMParameters.json'
+        overrideParameters: '-packageId $(packageId) -packageVersion $(packageVersion)'
