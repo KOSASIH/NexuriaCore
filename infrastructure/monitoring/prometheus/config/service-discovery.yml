@@ -1,0 +1,9 @@
+# Service discovery file
+
+- targets:
+  - nexuria-api-gateway:8080
+  - nexuria-qrbcs:8081
+  - nexuria-neuronetworks:8082
+  - nexuria-gaps:8083
+  labels:
+    job: nexuria
