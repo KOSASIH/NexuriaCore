@@ -1,0 +1,28 @@
+{
+  "learningPaths": [
+    {
+      "name": "Blockchain basics",
+      "modules": [
+        "Introduction to blockchain",
+        "Blockchain architecture"
+      ]
+    },
+    {
+      "name": "Pi Coin usage",
+      "modules": [
+        "Getting started with Pi Coin",
+        "Advanced Pi Coin features"
+      ]
+    }
+  ],
+  "userRoles": [
+    {
+      "name": "User",
+      "learningPaths": ["Blockchain basics", "Pi Coin usage"]
+    },
+    {
+      "name": "Business",
+      "learningPaths": ["Pi Coin usage", "Advanced Pi Coin features"]
+    }
+  ]
+}
