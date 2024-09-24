@@ -1,0 +1,231 @@
+{
+  "uid": "nexuria-dashboard",
+  "title": "Nexuria Dashboard",
+  "rows": [
+    {
+      "title": "Overview",
+      "panels": [
+        {
+          "id": 1,
+          "title": "CPU Usage",
+          "type": "graph",
+          "span": 4,
+          "targets": [
+            {
+              "expr": "100 - (100 - avg by (instance) (irate(node_cpu_seconds_total{job='nexuria-api-gateway'}[1m])))",
+              "legendFormat": "{{ instance }}",
+              "refId": "A"
+            }
+          ],
+          "yaxes": [
+            {
+              "format": "percent",
+              "label": "CPU Usage",
+              "show": true
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Memory Usage",
+          "type": "graph",
+          "span": 4,
+          "targets": [
+            {
+              "expr": "100 - (100 - avg by (instance) (node_memory_MemTotal_bytes{job='nexuria-api-gateway'} - node_memory_MemFree_bytes{job='nexuria-api-gateway'}) / node_memory_MemTotal_bytes{job='nexuria-api-gateway'} * 100)",
+              "legendFormat": "{{ instance }}",
+              "refId": "A"
+            }
+          ],
+          "yaxes": [
+            {
+              "format": "percent",
+              "label": "Memory Usage",
+              "show": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "API Gateway",
+      "panels": [
+        {
+          "id": 3,
+          "title": "Request Count",
+          "type": "graph",
+          "span": 4,
+          "targets": [
+            {
+              "expr": "sum(increase(nexuria_api_gateway_requests_total[1m]))",
+              "legendFormat": "{{ instance }}",
+              "refId": "A"
+            }
+          ],
+          "yaxes": [
+            {
+              "format": "none",
+              "label": "Request Count",
+              "show": true
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "title": "Response Time",
+          "type": "graph",
+          "span": 4,
+          "targets": [
+            {
+              "expr": "avg by (instance) (nexuria_api_gateway_response_time_seconds{job='nexuria-api-gateway'})",
+              "legendFormat": "{{ instance }}",
+              "refId": "A"
+            }
+          ],
+          "yaxes": [
+            {
+              "format": "seconds",
+              "label": "Response Time",
+              "show": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "QRBCS",
+      "panels": [
+        {
+          "id": 5,
+          "title": "Request Count",
+          "type": "graph",
+          "span": 4,
+          "targets": [
+            {
+              "expr": "sum(increase(nexuria_qrbcs_requests_total[1m]))",
+              "legendFormat": "{{ instance }}",
+              "refId": "A"
+            }
+          ],
+          "yaxes": [
+            {
+              "format": "none",
+              "label": "Request Count",
+              "show": true
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "title": "Response Time",
+          "type": "graph",
+          "span": 4,
+          "targets": [
+            {
+              "expr": "avg by (instance) (nexuria_qrbcs_response_time_seconds{job='nexuria-qrbcs'})",
+              "legendFormat": "{{ instance }}",
+              "refId": "A"
+            }
+          ],
+          "yaxes": [
+            {
+              "format": "seconds",
+              "label": "Response Time",
+              "show": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "NeuroNetworks",
+      "panels": [
+        {
+          "id": 7,
+          "title": "Request Count",
+          "type": "graph",
+          "span": 4,
+          "targets": [
+            {
+              "expr": "sum(increase(nexuria_neuronetworks_requests_total[1m]))",
+              "legendFormat": "{{ instance }}",
+              "refId": "A"
+            }
+          ],
+          "yaxes": [
+            {
+              "format": "none",
+              "label": "Request Count",
+              "show": true
+            }
+          ]
+        },
+        {
+          "id": 8,
+          "title": "Response Time",
+          "type": "graph",
+          "span": 4,
+          " targets": [
+            {
+              "expr": "avg by (instance) (nexuria_neuronetworks_response_time_seconds{job='nexuria-neuronetworks'})",
+              "legendFormat": "{{ instance }}",
+              "refId": "A"
+            }
+          ],
+          "yaxes": [
+            {
+              "format": "seconds",
+              "label": "Response Time",
+              "show": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "GAPS",
+      "panels": [
+        {
+          "id": 9,
+          "title": "Request Count",
+          "type": "graph",
+          "span": 4,
+          "targets": [
+            {
+              "expr": "sum(increase(nexuria_gaps_requests_total[1m]))",
+              "legendFormat": "{{ instance }}",
+              "refId": "A"
+            }
+          ],
+          "yaxes": [
+            {
+              "format": "none",
+              "label": "Request Count",
+              "show": true
+            }
+          ]
+        },
+        {
+          "id": 10,
+          "title": "Response Time",
+          "type": "graph",
+          "span": 4,
+          "targets": [
+            {
+              "expr": "avg by (instance) (nexuria_gaps_response_time_seconds{job='nexuria-gaps'})",
+              "legendFormat": "{{ instance }}",
+              "refId": "A"
+            }
+          ],
+          "yaxes": [
+            {
+              "format": "seconds",
+              "label": "Response Time",
+              "show": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
