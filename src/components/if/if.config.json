@@ -1,0 +1,32 @@
+{
+  "blockchainNetworks": [
+    {
+      "name": "Ethereum",
+      "adapter": "EthereumAdapter"
+    },
+    {
+      "name": "Bitcoin",
+      "adapter": "BitcoinAdapter"
+    }
+  ],
+  "traditionalFinancialSystems": [
+    {
+      "name": "Visa",
+      "adapter": "VisaAdapter"
+    },
+    {
+      "name": "Mastercard",
+      "adapter": "MastercardAdapter"
+    }
+  ],
+  "iotDevices": [
+    {
+      "name": "Smart thermostat",
+      "adapter": "SmartThermostatAdapter"
+    },
+    {
+      "name": "Smart lighting system",
+      "adapter": "SmartLightingSystemAdapter"
+    }
+  ]
+}
