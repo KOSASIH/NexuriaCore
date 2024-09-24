@@ -1,0 +1,159 @@
+# Nexuria AWS Deployment YAML File
+
+# Define the AWS region
+region: us-west-2
+
+# Define the AWS credentials
+aws_access_key_id: ${AWS_ACCESS_KEY_ID}
+aws_secret_access_key: ${AWS_SECRET_ACCESS_KEY}
+
+# Define the VPC and subnets
+vpc:
+  cidr_block: 10.0.0.0/16
+  subnets:
+    - cidr_block: 10.0.1.0/24
+      availability_zone: us-west-2a
+    - cidr_block: 10.0.2.0/24
+      availability_zone: us-west-2b
+
+# Define the security groups
+security_groups:
+  - name: nexuria-sg
+    description: Nexuria security group
+    rules:
+      - protocol: tcp
+        from_port: 22
+        to_port: 22
+        cidr_blocks:
+          - 0.0.0.0/0
+      - protocol: tcp
+        from_port: 80
+        to_port: 80
+        cidr_blocks:
+          - 0.0.0.0/0
+      - protocol: tcp
+        from_port: 443
+        to_port: 443
+        cidr_blocks:
+          - 0.0.0.0/0
+
+# Define the EC2 instances
+ec2_instances:
+  - name: nexuria-api-gateway
+    instance_type: c5.xlarge
+    ami: ami-0c94855ba95c71c99
+    vpc_security_group_ids:
+      - ${security_groups[0].id}
+    subnet_id: ${vpc.subnets[0].id}
+    key_name: nexuria-key
+  - name: nexuria-qrbcs
+    instance_type: c5.xlarge
+    ami: ami-0c94855ba95c71c99
+    vpc_security_group_ids:
+      - ${security_groups[0].id}
+    subnet_id: ${vpc.subnets[1].id}
+    key_name: nexuria-key
+  - name: nexuria-neuronetworks
+    instance_type: c5.xlarge
+    ami: ami-0c94855ba95c71c99
+    vpc_security_group_ids:
+      - ${security_groups[0].id}
+    subnet_id: ${vpc.subnets[0].id}
+    key_name: nexuria-key
+  - name: nexuria-gaps
+    instance_type: c5.xlarge
+    ami: ami-0c94855ba95c71c99
+    vpc_security_group_ids:
+      - ${security_groups[0].id}
+    subnet_id: ${vpc.subnets[1].id}
+    key_name: nexuria-key
+
+# Define the RDS instances
+rds_instances:
+  - name: nexuria-rds
+    instance_class: db.r5.xlarge
+    engine: postgres
+    allocated_storage: 100
+    vpc_security_group_ids:
+      - ${security_groups[0].id}
+    subnet_id: ${vpc.subnets[0].id}
+    username: nexuria
+    password: ${RDS_PASSWORD}
+
+# Define the Elastic Beanstalk environment
+elastic_beanstalk:
+  environment_name: nexuria-env
+  application_name: nexuria-app
+  platform_name: 64bit Amazon Linux 2 v3.2.4 running Docker
+  tier:
+    name: WebServer
+    type: Standard
+  instance:
+    type: c5.xlarge
+  vpc:
+    id: ${vpc.id}
+    subnets:
+      - ${vpc.subnets[0].id}
+      - ${vpc.subnets[1].id}
+  security_groups:
+    - ${security_groups[0].id}
+
+# Define the CloudWatch logs
+cloudwatch_logs:
+  log_group_name: nexuria-logs
+  log_stream_name: nexuria-log-stream
+
+# Define the CloudFormation stack
+cloudformation_stack:
+  name: nexuria-stack
+  template_body: |
+    AWSTemplateFormatVersion: '2010-09-09'
+    Resources:
+      NexuriaVPC:
+        Type: 'AWS::EC2::VPC'
+        Properties:
+          CidrBlock: ${vpc.cidr_block}
+      NexuriaSubnet1:
+        Type: 'AWS::EC2::Subnet'
+        Properties:
+          CidrBlock: ${vpc.subnets[0].cidr_block}
+          AvailabilityZone: ${vpc.subnets[0].availability_zone}
+          VpcId: !Ref NexuriaVPC
+      NexuriaSubnet2:
+        Type: 'AWS::EC2::Subnet'
+        Properties:
+          CidrBlock: ${vpc.subnets[1].cidr _block}
+          AvailabilityZone: ${vpc.subnets[1].availability_zone}
+          VpcId: !Ref NexuriaVPC
+      NexuriaSecurityGroup:
+        Type: 'AWS::EC2::SecurityGroup'
+        Properties:
+          GroupDescription: ${security_groups[0].description}
+          VpcId: !Ref NexuriaVPC
+      NexuriaEC2Instance1:
+        Type: 'AWS::EC2::Instance'
+        Properties:
+          ImageId: ${ec2_instances[0].ami}
+          InstanceType: ${ec2_instances[0].instance_type}
+          SubnetId: !Ref NexuriaSubnet1
+          SecurityGroupIds:
+            - !Ref NexuriaSecurityGroup
+      NexuriaEC2Instance2:
+        Type: 'AWS::EC2::Instance'
+        Properties:
+          ImageId: ${ec2_instances[1].ami}
+          InstanceType: ${ec2_instances[1].instance_type}
+          SubnetId: !Ref NexuriaSubnet2
+          SecurityGroupIds:
+            - !Ref NexuriaSecurityGroup
+      NexuriaRDSInstance:
+        Type: 'AWS::RDS::DBInstance'
+        Properties:
+          DBInstanceClass: ${rds_instances[0].instance_class}
+          Engine: ${rds_instances[0].engine}
+          AllocatedStorage: ${rds_instances[0].allocated_storage}
+          VPCSecurityGroupIds:
+            - !Ref NexuriaSecurityGroup
+          SubnetId: !Ref NexuriaSubnet1
+          DBUsername: ${rds_instances[0].username}
+          DBPassword: ${rds_instances[0].password}
