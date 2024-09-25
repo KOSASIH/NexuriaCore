@@ -36,6 +36,13 @@
 [![AIIB](https://img.shields.io/badge/AIIB-Asian%20Infrastructure%20Investment%20Bank-blue.svg)](https://www.aiib.org/)
 [![EIB](https://img.shields.io/badge/EIB-European%20Investment%20Bank-blue.svg)](https://www.eib.org/)
 [![NATO](https://img.shields.io/badge/NATO-North%20Atlantic%20Treaty%20Organization-blue.svg)](https://www.nato.int/)
+[![ADBI](https://img.shields.io/badge/ADBI-Asian%20Development%20Bank%20Institute-blue.svg)](https://www.adbi.org/)
+[![BOC](https://img.shields.io/badge/BOC-Bank%20of%20China-blue.svg)](https://www.boc.cn/)
+[![CDB](https://img.shields.io/badge/CDB-China%20Development%20Bank-blue.svg)](https://www.cdb.com.cn/)
+[![EXIM](https://img.shields.io/badge/EXIM-Export--Import%20Bank%20of%20China-blue.svg)](https://www.eximbank.gov.cn/)
+[![HKMA](https://img.shields.io/badge/HKMA-Hong%20Kong%20Monetary%20Authority-blue.svg)](https://www.hkma.gov.hk/)
+[![ICBC](https://img.shields.io/badge/ICBC-Industrial%20and%20Commercial%20Bank%20of%20China-blue.svg)](https://www.icbc.com.cn/)
+[![JBIC](https://img.shields.io/badge/JBIC-Japan%20Bank%20for%20International%20Cooperation-blue.svg)](https://www.jbic.go.jp/)
 
 <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/KOSASIH/NexuriaCore">Nexuria</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.linkedin.com/in/kosasih-81b46b5a">KOSASIH</a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Creative Commons Attribution 4.0 International<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""></a></p>
 
