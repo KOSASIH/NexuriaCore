@@ -13,6 +13,12 @@
 [![UNDP](https://img.shields.io/badge/UNDP-Sustainable%20Development%20Goals-blue)](https://www.undp.org/)
 [![WIPO](https://img.shields.io/badge/WIPO-Intellectual%20Property%20Partner-red)](https://www.wipo.int/)
 [![ITU](https://img.shields.io/badge/ITU-Global%20Telecommunication%20Standards-orange)](https://www.itu.int/)
+[![UNICEF](https://img.shields.io/badge/UNICEF-Children's%20Rights%20Advocate-blue)](https://www.unicef.org/)
+[![FAO](https://img.shields.io/badge/FAO-Global%20Food%20Security-yellowgreen)](https://www.fao.org/)
+[![UNHCR](https://img.shields.io/badge/UNHCR-Refugee%20Protection%20Partner-orange)](https://www.unhcr.org/)
+[![WWF](https://img.shields.io/badge/WWF-Conservation%20Partner-green)](https://www.worldwildlife.org/)
+[![IOM](https://img.shields.io/badge/IOM-Migration%20Management%20Partner-red)](https://www.iom.int/)
+[![UNEP](https://img.shields.io/badge/UNEP-Environmental%20Sustainability%20Partner-blue)](https://www.unep.org/)
 
 <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/KOSASIH/NexuriaCore">Nexuria</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.linkedin.com/in/kosasih-81b46b5a">KOSASIH</a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Creative Commons Attribution 4.0 International<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""></a></p>
 
