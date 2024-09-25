@@ -48,6 +48,8 @@
 [![MATRADE](https://img.shields.io/badge/MATRADE-Malaysia%20External%20Trade%20Development%20Corporation-blue.svg)](https://www.matrade.gov.my/)
 [![MAS](https://img.shields.io/badge/MAS-Monetary%20Authority%20of%20Singapore-blue.svg)](https://www.mas.gov.sg/)
 [![PBOC](https://img.shields.io/badge/PBOC-People's%20Bank%20of%20China-blue.svg)](https://www.pbc.gov.cn/)
+[![RBI](https://img.shields.io/badge/RBI-Reserve%20Bank%20of%20India-blue.svg)](https://www.rbi.org.in/)
+[![SSE](https://img.shields.io/badge/SSE-Shanghai%20Stock%20Exchange-blue.svg)](https://www.sse.com.cn/)
 
 <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/KOSASIH/NexuriaCore">Nexuria</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.linkedin.com/in/kosasih-81b46b5a">KOSASIH</a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Creative Commons Attribution 4.0 International<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""></a></p>
 
