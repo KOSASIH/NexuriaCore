@@ -7,6 +7,12 @@
 [![EBRD](https://img.shields.io/badge/EBRD-Project%20Investment-blue)](https://www.ebrd.com/)
 [![AfDB](https://img.shields.io/badge/AfDB-Regional%20Integration%20Partner-yellowgreen)](https://www.afdb.org/)
 [![IDB](https://img.shields.io/badge/IDB-Regional%20Development%20Partner-red)](https://www.iadb.org/)
+[![OECD](https://img.shields.io/badge/OECD-Economic%20Development%20Partner-blue)](https://www.oecd.org/)
+[![WTO](https://img.shields.io/badge/WTO-International%20Trade%20Partner-orange)](https://www.wto.org/)
+[![ILO](https://img.shields.io/badge/ILO-Global%20Labour%20Standards-yellowgreen)](https://www.ilo.org/)
+[![UNDP](https://img.shields.io/badge/UNDP-Sustainable%20Development%20Goals-blue)](https://www.undp.org/)
+[![WIPO](https://img.shields.io/badge/WIPO-Intellectual%20Property%20Partner-red)](https://www.wipo.int/)
+[![ITU](https://img.shields.io/badge/ITU-Global%20Telecommunication%20Standards-orange)](https://www.itu.int/)
 
 <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/KOSASIH/NexuriaCore">Nexuria</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.linkedin.com/in/kosasih-81b46b5a">KOSASIH</a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Creative Commons Attribution 4.0 International<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""></a></p>
 
