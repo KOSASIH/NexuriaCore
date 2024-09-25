@@ -43,6 +43,11 @@
 [![HKMA](https://img.shields.io/badge/HKMA-Hong%20Kong%20Monetary%20Authority-blue.svg)](https://www.hkma.gov.hk/)
 [![ICBC](https://img.shields.io/badge/ICBC-Industrial%20and%20Commercial%20Bank%20of%20China-blue.svg)](https://www.icbc.com.cn/)
 [![JBIC](https://img.shields.io/badge/JBIC-Japan%20Bank%20for%20International%20Cooperation-blue.svg)](https://www.jbic.go.jp/)
+[![KDI](https://img.shields.io/badge/KDI-Korea%20Development%20Institute-blue.svg)](https://www.kdi.re.kr/)
+[![KRX](https://img.shields.io/badge/KRX-Korea%20Exchange-blue.svg)](https://www.krx.co.kr/)
+[![MATRADE](https://img.shields.io/badge/MATRADE-Malaysia%20External%20Trade%20Development%20Corporation-blue.svg)](https://www.matrade.gov.my/)
+[![MAS](https://img.shields.io/badge/MAS-Monetary%20Authority%20of%20Singapore-blue.svg)](https://www.mas.gov.sg/)
+[![PBOC](https://img.shields.io/badge/PBOC-People's%20Bank%20of%20China-blue.svg)](https://www.pbc.gov.cn/)
 
 <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/KOSASIH/NexuriaCore">Nexuria</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.linkedin.com/in/kosasih-81b46b5a">KOSASIH</a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Creative Commons Attribution 4.0 International<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""></a></p>
 
