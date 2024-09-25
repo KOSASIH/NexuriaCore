@@ -37,6 +37,14 @@
 [![Contributors](https://img.shields.io/github/contributors/KOSASIH/NexuriaCore)](https://github.com/KOSASIH/NexuriaCore/graphs/contributors)
 [![Last Commit](https://img.shields.io/github/last-commit/KOSASIH/NexuriaCore)](https://github.com/KOSASIH/NexuriaCore/commits/main)
 [![Open Issues](https://img.shields.io/github/issues/KOSASIH/NexuriaCore)](https://github.com/KOSASIH/NexuriaCore/issues)
+[![Documentation](https://img.shields.io/badge/GitBook-Docu-lightblue)](https://sulstice.gitbook.io/globalchem-your-chemical-graph-network/)
+[![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://www.chemicalgraphtheory.com)
+[![Python](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/downloads/release/python-360/)
+[![DOI](https://zenodo.org/badge/259046250.svg)](https://zenodo.org/badge/latestdoi/259046250)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![PEP8](https://img.shields.io/badge/code%20style-pep8-orange.svg)](https://www.python.org/dev/peps/pep-0008/)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FSulstice%2Fglobal-chem.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FSulstice%2Fglobal-chem?ref=badge_shield)
+[![Maturity badge - level 2](https://img.shields.io/badge/Maturity-Level%202%20--%20First%20Release-yellowgreen.svg)](https://github.com/tophat/getting-started/blob/master/scorecard.md)
 
 # NexuriaCore
 The central repository for Project [Nexuria](docs), housing the overall project architecture and integration of its components.
