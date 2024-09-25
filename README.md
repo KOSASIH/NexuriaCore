@@ -37,6 +37,7 @@
 [![Contributors](https://img.shields.io/github/contributors/KOSASIH/NexuriaCore)](https://github.com/KOSASIH/NexuriaCore/graphs/contributors)
 [![Last Commit](https://img.shields.io/github/last-commit/KOSASIH/NexuriaCore)](https://github.com/KOSASIH/NexuriaCore/commits/main)
 [![Open Issues](https://img.shields.io/github/issues/KOSASIH/NexuriaCore)](https://github.com/KOSASIH/NexuriaCore/issues)
+[![Inline docs](https://inch-ci.org/github/KOSASIH/NexuriaCore.svg?branch=master)](https://inch-ci.org/github/KOSASIH/NexuriaCore)
 
 # NexuriaCore
 The central repository for Project [Nexuria](docs), housing the overall project architecture and integration of its components.
