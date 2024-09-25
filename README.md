@@ -28,6 +28,7 @@
 [![WCO](https://img.shields.io/badge/WCO-World%20Customs%20Organization-blue.svg)](https://www.wcoomd.org)
 [![IATA](https://img.shields.io/badge/IATA-International%20Air%20Transport%20Association-blue.svg)](https://www.iata.org)
 [![IMO](https://img.shields.io/badge/IMO-International%20Maritime%20Organization-blue.svg)](https://www.imo.org)
+[![Federal Reserve](https://img.shields.io/badge/Federal%20Reserve-United%20States%20Central%20Bank-blue.svg)](https://www.federalreserve.gov/)
 
 <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/KOSASIH/NexuriaCore">Nexuria</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.linkedin.com/in/kosasih-81b46b5a">KOSASIH</a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Creative Commons Attribution 4.0 International<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""></a></p>
 
