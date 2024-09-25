@@ -30,6 +30,12 @@
 [![IMO](https://img.shields.io/badge/IMO-International%20Maritime%20Organization-blue.svg)](https://www.imo.org)
 [![Federal Reserve](https://img.shields.io/badge/Federal%20Reserve-United%20States%20Central%20Bank-blue.svg)](https://www.federalreserve.gov/)
 [![EU](https://img.shields.io/badge/EU-European%20Union-blue.svg)](https://europa.eu/)
+[![Council of Europe](https://img.shields.io/badge/Council%20of%20Europe-COE-blue.svg)](https://www.coe.int/)
+[![OAS](https://img.shields.io/badge/OAS-Organization%20of%20American%20States-blue.svg)](https://www.oas.org/)
+[![AU](https://img.shields.io/badge/AU-African%20Union-blue.svg)](https://au.int/)
+[![AIIB](https://img.shields.io/badge/AIIB-Asian%20Infrastructure%20Investment%20Bank-blue.svg)](https://www.aiib.org/)
+[![EIB](https://img.shields.io/badge/EIB-European%20Investment%20Bank-blue.svg)](https://www.eib.org/)
+[![NATO](https://img.shields.io/badge/NATO-North%20Atlantic%20Treaty%20Organization-blue.svg)](https://www.nato.int/)
 
 <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/KOSASIH/NexuriaCore">Nexuria</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.linkedin.com/in/kosasih-81b46b5a">KOSASIH</a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Creative Commons Attribution 4.0 International<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""></a></p>
 
