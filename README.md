@@ -2,7 +2,7 @@
 [![IMF](https://img.shields.io/badge/IMF-Research%20Collaborator-yellowgreen)](https://www.imf.org/)
 [![UN](https://img.shields.io/badge/UN-Sustainable%20Development%20Goals-blue)](https://www.un.org/)
 [![WHO](https://img.shields.io/badge/WHO-Global%20Health%20Partner-red)](https://www.who.int/)
-[![IFC](https://img.shields.io/badge/IFC-Project%20Financing -green)](https://www.ifc.org/)
+[![IFC](https://img.shields.io/badge/IFC-Project%20Financing-green)](https://www.ifc.org/)
 [![ADB](https://img.shields.io/badge/ADB-Regional%20Development%20Partner-orange)](https://www.adb.org/)
 [![EBRD](https://img.shields.io/badge/EBRD-Project%20Investment-blue)](https://www.ebrd.com/)
 [![AfDB](https://img.shields.io/badge/AfDB-Regional%20Integration%20Partner-yellowgreen)](https://www.afdb.org/)
