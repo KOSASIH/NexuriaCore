@@ -23,6 +23,11 @@
 [![BIS](https://img.shields.io/badge/BIS-Bank%20for%20International%20Settlements-blue.svg)](https://www.bis.org)
 [![ISO](https://img.shields.io/badge/ISO-International%20Organization%20for%20Standardization-blue.svg)](https://www.iso.org)
 [![FSB](https://img.shields.io/badge/FSB-Financial%20Stability%20Board-blue.svg)](https://www.fsb.org)
+[![WEF](https://img.shields.io/badge/WEF-World%20Economic%20Forum-blue.svg)](https://www.weforum.org)
+[![ICC](https://img.shields.io/badge/ICC-International%20Chamber%20of%20Commerce-blue.svg)](https://iccwbo.org)
+[![WCO](https://img.shields.io/badge/WCO-World%20Customs%20Organization-blue.svg)](https://www.wcoomd.org)
+[![IATA](https://img.shields.io/badge/IATA-International%20Air%20Transport%20Association-blue.svg)](https://www.iata.org)
+[![IMO](https://img.shields.io/badge/IMO-International%20Maritime%20Organization-blue.svg)](https://www.imo.org)
 
 <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/KOSASIH/NexuriaCore">Nexuria</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.linkedin.com/in/kosasih-81b46b5a">KOSASIH</a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Creative Commons Attribution 4.0 International<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""></a></p>
 
