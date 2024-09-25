@@ -68,6 +68,7 @@
 [![SET](https://img.shields.io/badge/SET-Stock%20Exchange%20of%20Thailand-blue.svg)](https://www.set.or.th/)
 [![TWSE](https://img.shields.io/badge/TWSE-Taiwan%20Stock%20Exchange-blue.svg)](https://www.twse.com.tw/)
 [![BOCOM](https://img.shields.io/badge/BOCOM-Bank%20of%20Communications-blue.svg)](https://www.bankcomm.com/)
+[![CCB](https://img.shields.io/badge/CCB-China%20Construction%20Bank-blue.svg)](https://www.ccb.com/)
 
 <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/KOSASIH/NexuriaCore">Nexuria</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.linkedin.com/in/kosasih-81b46b5a">KOSASIH</a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Creative Commons Attribution 4.0 International<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""></a></p>
 
