@@ -82,7 +82,10 @@
 [![Tadawul](https://img.shields.io/badge/Tadawul-Saudi%20Stock%20Exchange-blue.svg)](https://www.tadawul.com.sa/)
 [![AfDB](https://img.shields.io/badge/AfDB-African%20Development%20Bank-blue.svg)](https://www.afdb.org/)
 [![BOA](https://img.shields.io/badge/BOA-Bank%20of%20Africa-blue.svg)](https://www.bankofafrica.com/)
-
+[![BCEAO](https://img.shields.io/badge/BCEAO-Central%20Bank%20of%20West%20African%20States-blue.svg)](https://www.bceao.int/)
+[![EADB](https://img.shields.io/badge/EADB-East%20African%20Development%20Bank-blue.svg)](https://www.eadb.org/)
+[![NSE](https://img.shields.io/badge/NSE-Nigerian%20Stock%20Exchange-blue.svg)](https://www.nse.com.ng/)
+[![SARB](https://img.shields.io/badge/SARB-South%20African%20Reserve%20Bank-blue.svg)](https://www.resbank.co.za/)
 
 <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/KOSASIH/NexuriaCore">Nexuria</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.linkedin.com/in/kosasih-81b46b5a">KOSASIH</a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Creative Commons Attribution 4.0 International<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""></a></p>
 
