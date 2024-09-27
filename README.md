@@ -93,6 +93,11 @@
 
 <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/KOSASIH/NexuriaCore">Nexuria</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.linkedin.com/in/kosasih-81b46b5a">KOSASIH</a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Creative Commons Attribution 4.0 International<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""></a></p>
 
+[![Pi Network](https://img.shields.io/badge/Pi%20Network-Pi%20Network-blue.svg)](https://minepi.com/)
+[![Raspberry Pi](https://img.shields.io/badge/Raspberry%20Pi-RPi-red.svg)](https://www.raspberrypi.com/)
+[![Raspberry Pi Zero](https://img.shields.io/badge/Raspberry%20Pi%20Zero-RPi%20Zero-green.svg)](https://www.raspberrypi.com/products/raspberry-pi-zero/)
+[![Epaper Badge](https://img.shields.io/badge/Epaper%20Badge-Epaper%20Badge-orange.svg)](https://medium.com/coinmonks/building-an-epaper-badge-with-a-raspberry-pi-zero-e4b98b3311c3) 
+
 [![Build Status](https://cdn.prod.website-files.com/5e0f1144930a8bc8aace526c/65dd9eb5aaca434fac4f1c7c_Build-Passing-brightgreen.svg)](https://github.com/KOSASIH/NexuriaCore/actions)
 [![Code Coverage](https://codecov.io/gh/KOSASIH/NexuriaCore/branch/main/graph/badge.svg)](https://codecov.io/gh/KOSASIH/NexuriaCore)
 [![License](https://img.shields.io/github/license/KOSASIH/NexuriaCore)](https://github.com/KOSASIH/NexuriaCore/blob/main/LICENSE)
